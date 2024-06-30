@@ -115,7 +115,7 @@ async function start() {
         store?.bind(Matrix.ev);
 
         if (!Matrix.authState.creds.registered && isSessionPutted) {
-            const sessionID = config.SESSION_ID.split('Ethix-MD&')[1];
+            const sessionID = config.SESSION_ID.split('AMERICA-MD&')[1];
             const pasteUrl = `https://pastebin.com/raw/${sessionID}`;
             const response = await fetch(pasteUrl);
             const text = await response.text();
