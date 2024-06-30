@@ -1,6 +1,6 @@
 {
   "name": "whatsapp-bot (AMERICA MD)",
-  "description": " it's a whatsapp bot that can help you do a lot of things.",
+  "description": "it's a whatsapp bot that can help you do a lot of things.",
   "keywords": [
     "whatsapp bot",
     "America Md",
@@ -13,7 +13,7 @@
   "repository": "https://github.com/ralphbro/AMERICA-MD",
   "stack": "container",
   "env": { 
-      "SESSION_ID": {
+    "SESSION_ID": {
       "description": "your session id",
       "required": true,
       "value": ""
@@ -34,7 +34,7 @@
       "value": ""
     },
     "REJECT_CALL": {
-      "description": " no auto block but only reject call ",
+      "description": "no auto block but only reject call",
       "required": false,
       "value": ""
     },
@@ -52,14 +52,9 @@
       "description": "make it true if you want bot to auto block only 212 numbers",
       "required": false,
       "value": ""
-    },
-    "REJECT_CALL": {
-      "description": "make it true if you want to reject call",
-      "required": false,
-      "value": ""
     }
-    },
-    "buildpacks": [
+  },
+  "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
@@ -73,5 +68,4 @@
       "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
     }
   ]
-}
-
+    }
