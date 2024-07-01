@@ -185,6 +185,8 @@ async function start() {
             }
         });
 
+    Matrix.ev.on('creds.update', saveCreds);
+
         Matrix.ev.on('messages.upsert', async chatUpdate => {
             try {
                 const mek = chatUpdate.messages[0];
