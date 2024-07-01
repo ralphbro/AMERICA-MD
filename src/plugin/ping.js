@@ -1,25 +1,15 @@
-import { performance } from 'perf_hooks';
-
 const ping = async (m, sock) => {
   const prefix = /^[\\/!#.]/gi.test(m.body) ? m.body.match(/^[\\/!#.]/gi)[0] : '/';
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).toLowerCase() : '';
 
   if (cmd === "ping") {
-    // Function to measure ping
-    const measurePing = async () => {
-      const start = performance.now();
-      await new Promise(resolve => setTimeout(resolve, 100)); // Simulating some async operation
-      const end = performance.now();
-      return Math.round(end - start);
-    };
-    
-    const ping = await measurePing();
-    const emojis = ['🚀', '🔥', '💨', '🕶️', '🤙']; // Emojis for added flair
-
-    const text = `Yo, I'm lightning fast, bro! ${ping} ms ${emojis[Math.floor(Math.random() * emojis.length)]}`;
-    await sock.sendMessage(m.from, { text }, { quoted: m });
-
+    const start = new Date().getTime();
     await m.React('⚡');
+    const end = new Date().getTime();
+    const responseTime = (end - start) / 1000;
+
+    const text = `*_🔥⃝вσт ѕρєє∂: ${responseTime.toFixed(2)} s_*`;
+    sock.sendMessage(m.from, { text }, { quoted: m });
   }
 }
 
