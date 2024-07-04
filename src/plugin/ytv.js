@@ -75,10 +75,10 @@ const song = async (m, Matrix) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.create({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `America-Md 🇺🇲 Video Downloader\n*🔍Title:* ${videoDetails.title}\n*✍️ Author:* ${videoDetails.author}\n*🥸Views:* ${videoDetails.views}\n*👍 Likes:* ${videoDetails.likes}\n*📆 Upload Date:* ${videoDetails.uploadDate}\n*🏮 Duration:* ${videoDetails.duration}\n`
+                text: `AMERICA-𝞛𝘿 Video Downloader\n*🔍Title:* ${videoDetails.title}\n*✍️ Author:* ${videoDetails.author}\n*🥸Views:* ${videoDetails.views}\n*👍 Likes:* ${videoDetails.likes}\n*📆 Upload Date:* ${videoDetails.uploadDate}\n*🏮 Duration:* ${videoDetails.duration}\n`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "© Powered By America-Md 🇺🇲"
+                text: "© Created by Mrlit Andy"
               }),
               header: proto.Message.InteractiveMessage.Header.create({
                 ...(await prepareWAMessageMedia({ image: { url: `https://telegra.ph/file/6bbe29c62315100d16a86.jpg` } }, { upload: Matrix.waUploadToServer })),
@@ -139,7 +139,7 @@ const song = async (m, Matrix) => {
         const size = selectedFormat.size;
 
         await Matrix.sendMessage(m.from, {
-          video: finalVideoBuffer,
+          document: finalVideoBuffer,
           mimetype: 'video/mp4',
           caption: `Title: ${selectedFormat.title}\nAuthor: ${selectedFormat.author}\nViews: ${selectedFormat.views}\nLikes: ${selectedFormat.likes}\nUpload Date: ${selectedFormat.uploadDate}\nDuration: ${duration}\nSize: ${size}\n\n> Powered by America-Md 🇺🇲`
         }, { quoted: m });
